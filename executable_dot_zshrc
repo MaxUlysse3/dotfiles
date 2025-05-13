@@ -3,6 +3,7 @@ export PATH=/usr/sbin:/home/$USER/.cargo/bin:$PATH
 
 # Aliases
 alias ll="ls -al --color=auto"
+alias dodu="cat ~/Desktop/MES_DOSSIERS/RANDOM/dodu-height-20.txt"
 
 # autoload -Uz promptinit
 # promptinit

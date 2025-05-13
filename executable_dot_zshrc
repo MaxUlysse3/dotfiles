@@ -1,0 +1,62 @@
+# PATH export
+export PATH=/usr/sbin:/home/$USER/.cargo/bin:$PATH
+
+# Aliases
+alias ll="ls -al --color=auto"
+
+# autoload -Uz promptinit
+# promptinit
+# prompt adam1
+
+# Historic
+setopt histignorealldups sharehistory
+
+HISTSIZE=5000
+SAVEHIST=5000
+HISTFILE=~/.zsh_history
+
+# autoload -Uz compinit
+# compinit
+
+ZPLUG_HOME=/home/ulysse/.zplug
+EDITOR=vim
+
+source $ZPLUG_HOME/init.zsh
+zplug "lib/async_prompt", from:oh-my-zsh
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/sudo", from:oh-my-zsh
+zplug "plugins/command-not-found", from:oh-my-zsh
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-completions"
+zplug "junegunn/fzf"
+# zplug "robbyrussell/oh-my-zsh", use:"lib/*.zsh", defer:0
+# zplug "themes/robbyrussell", use:"lib/*.zsh", defer:0, as:theme, from:oh-my-zsh
+zplug "themes/agnoster", use:"lib/*.zsh", as:theme, defer:0, from:oh-my-zsh
+
+# agnoster color theme
+AGNOSTER_CONTEXT_BG=#0e0342 # Dark blue
+AGNOSTER_DIR_FG=#05f59b # Pale green
+AGNOSTER_DIR_BG=#7d3ca1 # Purple
+AGNOSTER_CONTEXT_FG=#7c9105 # Darker green
+
+if ! zplug check; then
+	printf "Install [Y/n]: "
+	if read -q; then
+		echo; zplug install
+	fi
+fi
+#zplug load --verbose
+zplug load
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/home/ulysse/.opam/opam-init/init.zsh' ]] || source '/home/ulysse/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
+
+cat ~/Desktop/MES_DOSSIERS/RANDOM/dodu-height-20.txt
